@@ -1,0 +1,19 @@
+name: Check PR Dependencies
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+jobs:
+  check_dependencies:
+    runs-on: ubuntu-latest
+    name: Check PR Dependencies
+    permissions:
+      pull-requests: read # Reason: To check PRs for dependencies.
+    steps:
+      - uses: gregsdennis/dependencies-action@v1.4.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
