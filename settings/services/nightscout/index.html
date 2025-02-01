@@ -9,9 +9,9 @@
 <link href="../fatprotein/" rel="prev"/>
 <link href="../notifications/" rel="next"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.5.44" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.40" name="generator"/>
 <title>Nightscout - TrioDocs</title>
-<link href="../../../assets/stylesheets/main.0253249f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -295,6 +295,38 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remote-caregivers-and-missing-red-loop-in-nightscout">
+<span class="md-ellipsis">
+      Remote Caregivers and Missing Red Loop in Nightscout
+    </span>
+</a>
+<nav aria-label="Remote Caregivers and Missing Red Loop in Nightscout" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-the-red-loop-indicator-is-missing-in-nightscout">
+<span class="md-ellipsis">
+      Why the “Red Loop” Indicator is Missing in Nightscout
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-recognize-a-disconnected-pod-in-nightscout">
+<span class="md-ellipsis">
+      How to Recognize a Disconnected Pod in Nightscout
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workaround">
+<span class="md-ellipsis">
+      Workaround
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -366,6 +398,38 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#remote-caregivers-and-missing-red-loop-in-nightscout">
+<span class="md-ellipsis">
+      Remote Caregivers and Missing Red Loop in Nightscout
+    </span>
+</a>
+<nav aria-label="Remote Caregivers and Missing Red Loop in Nightscout" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-the-red-loop-indicator-is-missing-in-nightscout">
+<span class="md-ellipsis">
+      Why the “Red Loop” Indicator is Missing in Nightscout
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-recognize-a-disconnected-pod-in-nightscout">
+<span class="md-ellipsis">
+      How to Recognize a Disconnected Pod in Nightscout
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workaround">
+<span class="md-ellipsis">
+      Workaround
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -393,6 +457,28 @@ with another person, it will be helpful for you to visualize what the loop is do
 <p><a href="https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/nightscout-setup.html">For help making a Nightscout account, please see the OpenAPS documentation.</a></p>
 <h2 id="trio-setup">Trio Setup<a class="headerlink" href="#trio-setup" title="Link to this section for reference">¶</a></h2>
 <p>To enable your nightscout connection, input your Nightscout URL, including the <code>https://</code> and your <code>API_SECRET</code>. Select <code>Allow uploads</code> so Trio can share its predictions and settings with Nightscout. </p>
+<h2 id="remote-caregivers-and-missing-red-loop-in-nightscout">Remote Caregivers and Missing Red Loop in Nightscout<a class="headerlink" href="#remote-caregivers-and-missing-red-loop-in-nightscout" title="Link to this section for reference">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Remote Caregivers and Missing Red Loop in Nightscout</p>
+<p>Read this section if you are using <strong><em>Trio</em></strong> version <strong><code>0.2.3</code> or earlier</strong>.</p>
+</div>
+<h3 id="why-the-red-loop-indicator-is-missing-in-nightscout">Why the “Red Loop” Indicator is Missing in Nightscout<a class="headerlink" href="#why-the-red-loop-indicator-is-missing-in-nightscout" title="Link to this section for reference">¶</a></h3>
+<p>When using <strong><em>Nightscout</em> version <code>15.0.2</code> (and earlier)</strong>, a caregiver looking at a <em>Trio</em> site will not see a “red loop” indication on <em>Nightscout</em> when the <em>Trio</em> phone is still getting glucose readings, but the <em>Pod</em> is disconnected (because of a communication issue or if it is deactivated). Even if the <em>Trio</em> phone clearly indicates the <em>Pod</em> issue, a remote viewer needs to know how to recognize this situation.</p>
+<h3 id="how-to-recognize-a-disconnected-pod-in-nightscout">How to Recognize a Disconnected Pod in Nightscout<a class="headerlink" href="#how-to-recognize-a-disconnected-pod-in-nightscout" title="Link to this section for reference">¶</a></h3>
+<p>The caregiver will see predictions continue, but no sign of extra insulin delivered for rising glucose or withheld for falling glucose.</p>
+<ul>
+<li>If it is a matter of <strong>communication problem</strong> (and the <em>Pod</em> is still active),<br/>
+  then the <em>Pod</em> will return to scheduled basal rates when any active temporary basal duration ends. </li>
+<li>If it is a matter of a <strong><em>Pod</em> fault or removal without applying a new <em>Pod</em></strong>,<br/>
+  the rate of glucose increase may be pretty steep.  </li>
+</ul>
+<p>The signature for this situation when viewing the <em>Nightscout</em> display is either:</p>
+<ol>
+<li>📈 rising glucose with no increase in temporary basal rates or application of manual bolus or SMB,</li>
+<li>📉 or falling glucose with no temporary basal set to <code>0 U/hr</code>.</li>
+</ol>
+<h3 id="workaround">Workaround<a class="headerlink" href="#workaround" title="Link to this section for reference">¶</a></h3>
+<p>ℹ️ For those who can use <em><a href="https://www.loopandlearn.org/loop-follow/">LoopFollow</a></em>, version <strong><code>2.2.9</code></strong> has an updated "Not Looping" indicator with an optional alarm that works with <em>Trio</em>.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -465,7 +551,7 @@ with another person, it will be helpful for you to visualize what the loop is do
 </div>
 <div class="md-progress" data-md-component="progress" role="progressbar"></div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.2.1"}</script>
-<script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
 <script src="../../../assets/javascripts/mathjax.js"></script>
 <script src="../../../assets/javascripts/mkdocs-exporter.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>

@@ -9,9 +9,9 @@
 <link href="../../../Getting-Started/pump/" rel="prev"/>
 <link href="../../../operate/build/" rel="next"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.5.44" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.40" name="generator"/>
 <title>CGMs - TrioDocs</title>
-<link href="../../../assets/stylesheets/main.0253249f.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.8c3ca2c6.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -314,23 +314,23 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#xdrip-xdrip4ios">
+<a class="md-nav__link" href="#xdrip4ios">
 <span class="md-ellipsis">
-      xDrip (xDrip4iOS)
+      xDrip4iOS
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dexcom-g5g6-and-one">
+<a class="md-nav__link" href="#dexcom-g5-g6-one">
 <span class="md-ellipsis">
-      Dexcom G5/G6 (and ONE)
+      Dexcom G5 / G6 / ONE
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dexcom-g7">
+<a class="md-nav__link" href="#dexcom-g7-one">
 <span class="md-ellipsis">
-      Dexcom G7
+      Dexcom G7 / ONE+
     </span>
 </a>
 </li>
@@ -359,19 +359,12 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#unsupported-sensors">
 <span class="md-ellipsis">
-      Unsupported sensors
+      Unsupported Sensors
     </span>
 </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#glucose-direct">
-<span class="md-ellipsis">
-      Glucose Direct
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#medtronic-enlite">
@@ -451,23 +444,23 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#xdrip-xdrip4ios">
+<a class="md-nav__link" href="#xdrip4ios">
 <span class="md-ellipsis">
-      xDrip (xDrip4iOS)
+      xDrip4iOS
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dexcom-g5g6-and-one">
+<a class="md-nav__link" href="#dexcom-g5-g6-one">
 <span class="md-ellipsis">
-      Dexcom G5/G6 (and ONE)
+      Dexcom G5 / G6 / ONE
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dexcom-g7">
+<a class="md-nav__link" href="#dexcom-g7-one">
 <span class="md-ellipsis">
-      Dexcom G7
+      Dexcom G7 / ONE+
     </span>
 </a>
 </li>
@@ -496,19 +489,12 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#unsupported-sensors">
 <span class="md-ellipsis">
-      Unsupported sensors
+      Unsupported Sensors
     </span>
 </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#glucose-direct">
-<span class="md-ellipsis">
-      Glucose Direct
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#medtronic-enlite">
@@ -531,24 +517,23 @@
 <p>CGM selection includes the following:</p>
 <ul>
 <li>Nightscout</li>
-<li>xDrip</li>
+<li>xDrip4iOS</li>
 <li>Dexcom G5</li>
-<li>Dexcom G6/ONE</li>
-<li>Dexcom G7/ONE+</li>
+<li>Dexcom G6 / ONE</li>
+<li>Dexcom G7 / ONE+</li>
 <li>Glucose Simulator</li>
 <li>Libre Transmitter</li>
-<li>Glucose Direct</li>
 <li>Medtronic Enlite</li>
 </ul>
 <h2 id="nightscout">Nightscout<a class="headerlink" href="#nightscout" title="Link to this section for reference">¶</a></h2>
 <p>While using Nightscout as a CGM is an option, it should be avoided if possible because it will not keep Trio running in the background like other CGM options. You will have to open Trio manually to make it run loop cycles.</p>
-<h2 id="xdrip-xdrip4ios">xDrip (xDrip4iOS)<a class="headerlink" href="#xdrip-xdrip4ios" title="Link to this section for reference">¶</a></h2>
-<p>To use xDrip4iOS as a CGM source, you must build it yourself with the same Apple Developer account you used to build your Trio app. You cannot use Shuggah or a version distributed by someone else's TestFlight. Please see the following for instructions on how to build xDrip4iOS yourself: <a href="../../../operate/build/#xdrip4ios-or-glucose-direct-as-cgm-source">link</a></p>
+<h2 id="xdrip4ios">xDrip4iOS<a class="headerlink" href="#xdrip4ios" title="Link to this section for reference">¶</a></h2>
+<p>To use xDrip4iOS as a CGM source, you must build it yourself with the same Apple Developer account you used to build your Trio app. You cannot use Shuggah or a version distributed by someone else's TestFlight. Please see the following for instructions on how to build xDrip4iOS yourself: <a href="../../../operate/build/#xdrip4ios-as-cgm-source">link</a></p>
 <p>However, if you are using Dexcom G6 or ONE with xDrip4iOS, you can choose the Dexcom G6 option in Trio rather than xDrip4iOS, and Trio will intercept the glucose readings even if you're using Shuggah or someone else's TestFlight of xDrip4iOS.</p>
-<h2 id="dexcom-g5g6-and-one">Dexcom G5/G6 (and ONE)<a class="headerlink" href="#dexcom-g5g6-and-one" title="Link to this section for reference">¶</a></h2>
+<h2 id="dexcom-g5-g6-one">Dexcom G5 / G6 / ONE<a class="headerlink" href="#dexcom-g5-g6-one" title="Link to this section for reference">¶</a></h2>
 <p>Trio can intercept glucose readings between the transmitter and the Dexcom app. If you are using a Dexcom G5, G6, or ONE sensor, tap Configuration CGM to enter your transmitter's 6-digit ID. Dexcom Share Credentials are not necessary. When switching transmitters, you must delete your current transmitter from Trio by tapping Configuration CGM, scrolling down, and Delete CGM. Once you do this, you can add the new transmitter with its Transmitter ID.</p>
-<h2 id="dexcom-g7">Dexcom G7<a class="headerlink" href="#dexcom-g7" title="Link to this section for reference">¶</a></h2>
-<p>Trio can intercept its glucose readings as long as the Dexcom G7 app is installed on the same phone. When a new G7 sensor is paired to the Dexcom G7 app, Trio will automatically start reading it.</p>
+<h2 id="dexcom-g7-one">Dexcom G7 / ONE+<a class="headerlink" href="#dexcom-g7-one" title="Link to this section for reference">¶</a></h2>
+<p>Trio can intercept its glucose readings as long as the Dexcom G7 or ONE app is installed on the same phone. When a new G7 sensor is paired to the Dexcom G7 app, or a new ONE+ sensor is paired to the Dexcom ONE+ app, Trio will automatically start reading it.</p>
 <h2 id="glucose-simulator">Glucose Simulator<a class="headerlink" href="#glucose-simulator" title="Link to this section for reference">¶</a></h2>
 <p>The Glucose Simulator adds artificial CGM readings to the screen so you can see how your readings might look in the app. When using this CGM option, you cannot manually influence the readings shown to reflect a desired glucose response. Actions taken by the Trio algorithm also do not affect the cgm readings in the Glucose Simulator. They are for visual purposes only. For this reason, using the Glucose Simulator will not help you understand how the algorithm influences blood sugars.</p>
 <div class="admonition warning">
@@ -556,24 +541,22 @@
 <p><strong><em>The Glucose Simulator should never be used in conjunction with a live pump connected to a person (or animal).</em></strong></p>
 </div>
 <h2 id="libre-transmitter">Libre Transmitter<a class="headerlink" href="#libre-transmitter" title="Link to this section for reference">¶</a></h2>
-<p>This option pairs a compatible Libre CGM directly with Trio without using a separate app like xDrip4iOS or Glucose Direct.</p>
+<p>This option pairs a compatible Libre CGM directly with Trio without using a separate app like xDrip4iOS.</p>
 <h3 id="supported-sensors">Supported Sensors<a class="headerlink" href="#supported-sensors" title="Link to this section for reference">¶</a></h3>
 <ul>
-<li>US Libre 1 10-day sensors <em>via Transmitters</em></li>
-<li>US Libre 1 14-day sensors <em>via Transmitters</em></li>
-<li>International Libre 1 sensors <em>via Transmitters</em></li>
-<li>European Libre 2 sensors <em>via Transmitters</em></li>
-<li>European Libre 2 sensors <em>directly via Bluetooth</em></li>
+<li>US Libre 1 10-day <em>via Transmitters</em></li>
+<li>US Libre 1 14-day <em>via Transmitters</em></li>
+<li>International Libre 1 <em>via Transmitters</em></li>
+<li>European Libre 2 / 2 Plus <em>via Transmitters</em></li>
+<li>European Libre 2 / 2 Plus <em>directly via Bluetooth</em></li>
 </ul>
-<h3 id="unsupported-sensors">Unsupported sensors<a class="headerlink" href="#unsupported-sensors" title="Link to this section for reference">¶</a></h3>
+<h3 id="unsupported-sensors">Unsupported Sensors<a class="headerlink" href="#unsupported-sensors" title="Link to this section for reference">¶</a></h3>
 <ul>
-<li>Non-European Libre 2 sensors</li>
-<li>Libre Pro sensors</li>
-<li>Libre H sensors</li>
+<li>Non-European Libre 2</li>
+<li>Libre Pro</li>
+<li>Libre H</li>
 <li>Libre 3</li>
 </ul>
-<h2 id="glucose-direct">Glucose Direct<a class="headerlink" href="#glucose-direct" title="Link to this section for reference">¶</a></h2>
-<p>Until the providers of Glucose Direct add a Trio App Group to Glucose Direct, you cannot use this app with Trio. If that happens, then you must build it yourself with the same Apple Developer account you used to build your Trio app. You cannot use a version distributed by someone else's TestFlight.</p>
 <h2 id="medtronic-enlite">Medtronic Enlite<a class="headerlink" href="#medtronic-enlite" title="Link to this section for reference">¶</a></h2>
 <p>The Minimed Enlite CGM, available with the Medtronic 522/722, 523/723, and 554/754, wirelessly sends glucose readings to the pump. Trio can read the Medtronic CGM data directly from the pump using a RileyLink-compatible device.</p>
 </article>
@@ -648,7 +631,7 @@
 </div>
 <div class="md-progress" data-md-component="progress" role="progressbar"></div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.2.1"}</script>
-<script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
 <script src="../../../assets/javascripts/mathjax.js"></script>
 <script src="../../../assets/javascripts/mkdocs-exporter.js"></script>
 <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
