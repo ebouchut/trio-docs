@@ -19,7 +19,7 @@ certifi==2025.7.14
     # via requests
 charset-normalizer==3.4.2
     # via requests
-click==8.2.1
+click==8.1.8
     # via mkdocs
 colorama==0.4.6
     # via mkdocs-material
@@ -33,6 +33,11 @@ hjson==3.1.0
     #   super-collections
 idna==3.10
     # via requests
+importlib-metadata==8.7.0
+    # via
+    #   markdown
+    #   mkdocs
+    #   mkdocs-get-deps
 jinja2==3.1.6
     # via
     #   -r requirements.in
@@ -110,7 +115,7 @@ pygments==2.19.2
     # via mkdocs-material
 pymdown-extensions==10.16
     # via mkdocs-material
-pypdf==5.8.0
+pypdf==6.0.0
     # via mkdocs-exporter
 python-dateutil==2.9.0.post0
     # via
@@ -141,9 +146,12 @@ typing-extensions==4.14.1
     # via
     #   beautifulsoup4
     #   pyee
+    #   pypdf
 urllib3==2.5.0
     # via requests
 watchdog==6.0.0
     # via mkdocs
 wcmatch==10.1
     # via mkdocs-include-markdown-plugin
+zipp==3.23.0
+    # via importlib-metadata
