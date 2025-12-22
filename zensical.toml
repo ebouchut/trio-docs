@@ -1,0 +1,664 @@
+# ============================================================================
+# Trio-docs configuration file
+# ============================================================================
+
+[project]
+
+# The site_name is shown in the page header and the browser window title
+#
+# Read more: https://zensical.org/docs/setup/basics/#site_name
+site_name = "TrioDocs"
+
+# The site_description is included in the HTML head and should contain a
+# meaningful description of the site content for use by search engines.
+#
+# Read more: https://zensical.org/docs/setup/basics/#site_description
+site_description = "Documentation of Trio, an Automated Insulin Delivery system for iOS."
+
+# The site_author attribute. This is used in the HTML head element.
+#
+# Read more: https://zensical.org/docs/setup/basics/#site_author
+site_author = "Trio Community"
+
+
+# Controls the directory structure of your documentation site, 
+# and thereby the URL format used for linking to pages.
+# 
+# Read more: https://zensical.org/docs/setup/basics/#use_directory_urls
+use_directory_urls = "!ENV [CHECK_BROKEN_LINKS, True]"
+
+# The site_url is the canonical URL for your site. When building online
+# documentation you should set this.
+# Read more: https://zensical.org/docs/setup/basics/#site_url
+site_url = "https://triodocs.org/"
+
+# The copyright notice appears in the page footer and can contain an HTML
+# fragment.
+#
+# Read more: https://zensical.org/docs/setup/basics/#copyright
+copyright = """
+Copyright &copy; 2025 Trio Community
+"""
+
+# ~~~~~~~~~~~~~~~~~~~
+# GitHub Repository
+# ~~~~~~~~~~~~~~~~~~~
+repo_name = "nightscout/trio-docs"
+
+# In order to display a link to the repository of your project as part of your documentation.
+# The link to the repository will be rendered next to the search bar on big screens. Additionally, for public repositories hosted on GitHub or GitLab, the latest release tag1, 
+# as well as the number of stars and forks, are automatically requested and rendered.
+#
+# Read more: https://zensical.org/docs/setup/repository/#configuration
+repo_url = "https://github.com/nightscout/trio-docs/"
+
+# Configure the edit URL to use the the dev branch 
+#
+# Read more: https://zensical.org/docs/setup/repository/#edit_uri
+edit_uri = "edit/dev/docs/"
+
+# Navigation structure
+# Zensical supports both implicit navigation and explicitly defined navigation.
+# If you decide not to define a navigation here then Zensical will simply
+# derive the navigation structure from the directory structure of your
+# "docs_dir". The definition below demonstrates how a navigation structure
+# can be defined using TOML syntax.
+#
+# Read more: https://zensical.org/docs/setup/navigation/
+nav = [
+  { "Home" = "index.md" },
+  { "Usage" = [
+      "usage/index.md",
+      { "User Interface" = "usage/interface.md" },
+      { "Core Concepts" = [
+          { "" = "usage/concepts/index.md" },
+          { "Basal Rates" = "usage/concepts/basal-rates.md" },
+          { "Insulin Sensitivities" = "usage/concepts/isf.md" },
+          { "Carb Ratios" = "usage/concepts/carb-ratios.md" },
+      ]},
+      { "Features" = [
+          { "" = "usage/features/index.md" },
+          { "Overrides" = "usage/features/overrides.md" },
+          { "Temporary Targets" = "usage/features/temp-targets.md" },
+          { "Statistics" = "usage/features/statistics.md" },
+          { "Bolus Calculator" = "usage/features/bolus-calculator.md" },
+          { "Using Dynamic ISF" = "usage/features/dynamic-isf.md" },
+      ]},
+    ]},
+  { "Installation and Update" = [
+       "install/index.md",
+      { "Requirements" = [
+          { "Compatible Devices" = [
+              "install/build/requirements/devices/index.md",
+              { "Insulin Pump" = "install/build/requirements/devices/pump.md" },
+              { "CGM" = "install/build/requirements/devices/cgm.md" },
+              { "iPhone" = "install/build/requirements/devices/iphone.md" },
+              { "Mac ✏️" = "install/build/requirements/devices/mac.md" },
+              { "Compatibility Matrix ✏️" = "install/build/requirements/devices/compatibility-matrix.md" },
+          ]},
+          { "Apple Developer Account" = "install/build/requirements/apple-developer.md" },
+      ]},
+      { "Build" = [
+          { "Build with Mac" = [
+              { "Mac Build Overview" = "install/build/mac/overview.md" },
+              { "Prepare your Computer" = "install/build/mac/computer.md" },
+              { "Prepare your iPhone" = "install/build/mac/iphone.md" },
+              { "Set Up Xcode" = "install/build/mac/xcode-setup.md" },
+              { "Build Trio with Xcode" = "install/build/mac/build.md" },
+              { "Build Errors" = "install/build/mac/build-errors.md" },
+              { "Update Trio with Xcode" = "install/build/mac/update.md" },
+          ]},
+          { "Build Beta with Browser" = "install/build/browser/build-dev-with-browser.md" },
+          { "Build with Browser ✏️" = [
+              { "Browser Build Overview ✏️" = "install/build/browser/browser-build-overview.md" },
+              { "Create GitHub Account ✏️" = "install/build/browser/create-github-account.md" },
+              { "Collect Secrets ✏️" = "install/build/browser/collect-secrets.md" },
+              { "Fork and Prepare your Trio Repository✏️" = "install/build/browser/fork-prepare-repo.md" },
+              { "GitHub Actions ✏️" = [
+                  { "Validate Secrets ✏️" = "install/build/browser/actions/validate-secrets.md" },
+                  { "Add Identifiers ✏️" = "install/build/browser/actions/add-identifiers.md" },
+                  { "Prepare App ✏️" = "install/build/browser/actions/prepare-app.md" },
+                  { "Generate Certificates ✏️" = "install/build/browser/actions/generate-certificates.md" },
+                  { "Build the App ✏️" = "install/build/browser/actions/build-app.md" },
+              ]},
+              { "Install Trio from TestFlight ✏️" = "install/build/browser/install-from-testflight.md" },
+              { "Browser Build Errors ✏️" = "install/build/browser/browser-build-errors.md" },
+              { "Customizations ✏️" = "install/build/browser/browser-customizations.md" },
+              { "Update with Browser ✏️" = "install/build/browser/browser-update.md" },
+          ]},
+      ]},
+      { "Upgrade ✏️" = "install/upgrade.md" },
+      { "Companion Apps" = [
+          "install/ecosystem/index.md",
+          { "Nightscout ✏️" = "install/ecosystem/nightscout-app.md" },
+          { "Loop Follow ✏️" = "install/ecosystem/loop-follow.md" },
+          { "XDrip4iOS ✏️" = "install/ecosystem/xdrip4ios.md" },
+      ]},
+  ]},
+  { "Configuration" = [
+    "configuration/index.md",
+    { "Startup Guides" = [
+        { "New User Setup Guide" = "configuration/new-user-setup.md" },
+        { "Migration Guides" = [
+            "configuration/migration/index.md",
+            { "Migrating from Trio 0.2.x" = "configuration/migration/trio-02x-migration.md" },
+            { "Migrating from iAPS" = "configuration/migration/iaps-migration.md" },
+            { "Migrating from Loop" = "configuration/migration/loop-migration.md" },
+            { "Migrating from AndroidAPS" = "configuration/migration/aaps-migration.md" },
+        ]},
+    ]},
+    { "Trio Settings" = [
+        "configuration/settings/index.md",
+        { "Devices" = [
+            "configuration/settings/devices/index.md",
+            { "Insulin Pump" = "configuration/settings/devices/pump.md" },
+            { "Continuous Glucose Monitor" = "configuration/settings/devices/cgm.md" },
+            { "Smart Watch" = "configuration/settings/devices/smart-watch.md" },
+        ]},
+        { "Therapy" = [
+            "configuration/settings/therapy/index.md",
+            { "Units and Limits" = "configuration/settings/therapy/units-limits.md" },
+            { "Glucose Targets" = "configuration/settings/therapy/glucose-targets.md" },
+            { "Basal Rates" = "configuration/settings/therapy/basal-rates.md" },
+            { "Carb Ratios" = "configuration/settings/therapy/carb-ratios.md" },
+            { "Insulin Sensitivities" = "configuration/settings/therapy/isf.md" },
+        ]},
+        { "Algorithm" = [
+            "configuration/settings/algorithm/index.md",
+            { "Autosens" = "configuration/settings/algorithm/autosens.md" },
+            { "Super Micro Bolus (SMB)" = "configuration/settings/algorithm/smb-settings.md" },
+            { "Dynamic Settings" = "configuration/settings/algorithm/dynamic-settings.md" },
+            { "Target Behavior" = "configuration/settings/algorithm/target-behavior.md" },
+            { "Additionals" = "configuration/settings/algorithm/additionals.md" },
+        ]},
+        { "Features" = [
+            "configuration/settings/features/index.md",
+            { "Bolus Calculator" = "configuration/settings/features/bolus-calculator.md" },
+            { "Meal Settings" = "configuration/settings/features/meal-settings.md" },
+            { "Shortcuts" = "configuration/settings/features/shortcuts.md" },
+            { "Remote Control" = "configuration/settings/features/remote-control.md" },
+            { "User Interface" = "configuration/settings/features/user-interface.md" },
+            { "App Icons" = "configuration/settings/features/app-icons.md" },
+            { "App Diagnostics ✏️" = "configuration/settings/features/app-diagnostics.md" },
+        ]},
+        { "Notifications" = [
+            "configuration/settings/notifications/index.md",
+            { "Trio Notifications" = "configuration/settings/notifications/trio-notifications.md" },
+            { "Live Activity" = "configuration/settings/notifications/live-activity.md" },
+            { "Calendar Events" = "configuration/settings/notifications/calendar-events.md" },
+        ]},
+        { "Services ✏️" = [
+            "configuration/settings/services/index.md",
+            { "Nightscout ✏️" = "configuration/settings/services/nightscout.md" },
+            { "Tidepool ✏️" = "configuration/settings/services/tidepool.md" },
+            { "Apple Health ✏️" = "configuration/settings/services/apple-health.md" },
+        ]},
+        { "Closing The Loop" = "configuration/settings/closed-loop.md" },
+    ]},
+  ]},
+  { "Help" = [
+    "help/index.md",
+    { "FAQs ✏️" = "help/faq.md" },
+    { "Safety ✏️" = "help/safety.md" },
+    { "Glossary ✏️" = "help/glossary.md" },
+    { "Troubleshooting ✏️" = "help/troubleshoot.md" },
+    { "Share Logs" = "help/share-logs.md" },
+    { "Submit an Issue" = "https://github.com/nightscout/trio-docs/issues/new/choose" },
+    { "Translate ✏️" = "help/translate.md" },
+    { "Support Communities" = [
+        { "Facebook" = "https://www.facebook.com/groups/diytrio" },
+        { "Discord" = "https://discord.gg/FnwFEFUwXE" },
+    ]},
+  ]},
+  { "0.2.x" = [
+      { "Home" = "./0.2.x/index.md" },
+      { "Overview" = [
+          { "Introduction" = "./0.2.x/Getting-Started/Overview.md" },
+          { "App Overview" = "./0.2.x/operate/interface.md" },
+          { "New User Guide" = "./0.2.x/Setup/New-User-Setup.md" },
+          { "Coming from Other AID Systems" = "./0.2.x/Configuration/transition-qa.md" },
+          { "Common Issues" = "./0.2.x/operate/troubleshoot.md" },
+          { "Device Compatibility" = [
+              { "iPhones & Watches" = "./0.2.x/Getting-Started/iphone.md" },
+              { "Pumps" = "./0.2.x/Getting-Started/pump.md" },
+              { "CGMs" = "./0.2.x/settings/devices/cgm.md" },
+          ]},
+      ]},
+      { "Build/Update Trio" = [
+          { "Build Instructions" = "./0.2.x/operate/build.md" },
+          { "Customizations" = "./0.2.x/operate/customize.md" },
+      ]},
+      { "User Settings" = [
+          { "Trio Main Preferences" = "./0.2.x/settings/configuration/preferences/trio.md" },
+          { "Pump, CGM, Watch" = "./0.2.x/Configuration/Devices.md" },
+          { "Additional Pump Settings" = "./0.2.x/settings/configuration/pumpsettings.md" },
+          { "Basal" = "./0.2.x/settings/configuration/basalprofile.md" },
+          { "ISF" = "./0.2.x/settings/configuration/insulinsensitivities.md" },
+          { "CR" = "./0.2.x/settings/configuration/carbratios.md" },
+          { "Target Glucose" = "./0.2.x/settings/configuration/targetglucose.md" },
+          { "Main Settings" = "./0.2.x/settings/configuration/preferences/mainsettings.md" },
+          { "SMB & UAM" = "./0.2.x/settings/configuration/concepts/smb-uam.md" },
+          { "Close the Loop" = "./0.2.x/Configuration/Configure.md" },
+      ]},
+      { "Optional Settings" = [
+          { "Apple Health" = "./0.2.x/settings/services/applehealth.md" },
+          { "FPU" = "./0.2.x/settings/services/fatprotein.md" },
+          { "Nightscout" = "./0.2.x/settings/services/nightscout.md" },
+          { "Notifications" = "./0.2.x/settings/services/notifications.md" },
+          { "SMB Settings" = "./0.2.x/settings/configuration/preferences/smbsettings.md" },
+          { "Temp Targets" = "./0.2.x/operate/temptarget.md" },
+      ]},
+      { "Advanced Settings" = [
+          { "Autotune" = "./0.2.x/settings/configuration/autotune.md" },
+          { "Dynamic Settings" = "./0.2.x/settings/configuration/concepts/autosens-dynamic.md" },
+          { "Sigmoid" = "./0.2.x/settings/configuration/concepts/sigmoid.md" },
+          { "Dynamic Settings Explained" = "./0.2.x/settings/configuration/preferences/dynamicsettings.md" },
+          { "Other Settings" = "./0.2.x/settings/configuration/preferences/othersettings.md" },
+          { "Sensitivity Settings" = "./0.2.x/settings/configuration/preferences/targetsettings.md" },
+      ]},
+      { "Resources" = [
+          { "Citations" = "./0.2.x/resources/citations.md" },
+          { "Translation" = "./0.2.x/resources/translate.md" },
+      ]},
+    ]}
+  ]
+
+# With the "extra_css" option you can add your own CSS styling to customize
+# your Zensical project according to your needs. You can add any number of
+# CSS files.
+#
+# The path provided should be relative to the "docs_dir".
+#
+# Read more: https://zensical.org/docs/customization/#additional-css
+#
+extra_css = [
+   "assets/stylesheets/primary_color.css",
+   "assets/stylesheets/extra.css",
+]
+
+# With the `extra_javascript` option you can add your own JavaScript to your
+# project to customize the behavior according to your needs.
+#
+# The path provided should be relative to the "docs_dir".
+#
+# Read more: https://zensical.org/docs/customization/#additional-javascript
+extra_javascript = [
+  "assets/javascripts/disable-instant-if-translated.js",
+  "assets/javascripts/mathjax.js",
+  "assets/javascripts/mkdocs-exporter.js",
+  "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+  # "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js",
+]
+
+# ----------------------------------------------------------------------------
+# Section for configuring theme options
+# ----------------------------------------------------------------------------
+[project.theme]
+
+# change this to "classic" to use the traditional Material for MkDocs look.
+variant = "classic"
+
+# Zensical allows you to override specific blocks, partials, or whole
+# templates as well as to define your own templates. To do this, uncomment
+# the custom_dir setting below and set it to a directory in which you
+# keep your template overrides.
+#
+# Read more:
+# - https://zensical.org/docs/customization/#extending-the-theme
+#
+custom_dir = "overrides"
+
+# With the "favicon" option you can set your own image to use as the icon
+# browsers will use in the browser title bar or tab bar. The path provided
+# must be relative to the "docs_dir".
+#
+# Read more:
+# - https://zensical.org/docs/setup/logo-and-icons/#favicon
+# - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
+#
+favicon = "assets/images/favicon.ico"
+
+# Zensical supports more than 60 different languages. This means that the
+# labels and tooltips that Zensical's templates produce are translated.
+# The "language" option allows you to set the language used. This language
+# is also indicated in the HTML head element to help with accessibility
+# and guide search engines and translation tools.
+#
+# The default language is "en" (English). It is possible to create
+# sites with multiple languages and configure a language selector. See
+# the documentation for details.
+#
+# Read more:
+# - https://zensical.org/docs/setup/language/
+#
+language = "en"
+
+logo = "assets/images/trio-logo.png"
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Zensical feature toggles that change the behavior of the documentation site.
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+features = [
+    # Zensical includes an announcement bar. This feature allows users to
+    # dismiss it then they have read the announcement.
+    # https://zensical.org/docs/setup/header/#announcement-bar
+    "announce.dismiss",
+
+    # If you have a repository configured and turn on this feature, Zensical
+    # will generate an edit button for the page. This works for common
+    # repository hosting services.
+    # https://zensical.org/docs/setup/repository/#code-actions
+    "content.action.edit",
+
+    # If you have a repository configured and turn on this feature, Zensical
+    # will generate a button that allows the user to view the Markdown
+    # code for the current page.
+    # https://zensical.org/docs/setup/repository/#code-actions
+    "content.action.view",
+
+    # Code annotations allow you to add an icon with a tooltip to your
+    # code blocks to provide explanations at crucial points.
+    # https://zensical.org/docs/authoring/code-blocks/#code-annotations
+    "content.code.annotate",
+
+    # This feature turns on a button in code blocks that allow users to
+    # copy the content to their clipboard without first selecting it.
+    # https://zensical.org/docs/authoring/code-blocks/#code-copy-button
+    "content.code.copy",
+
+    # Code blocks can include a button to allow for the selection of line
+    # ranges by the user.
+    # https://zensical.org/docs/authoring/code-blocks/#code-selection-button
+    "content.code.select",
+
+    # Zensical can render footnotes as inline tooltips, so the user can read
+    # the footnote without leaving the context of the document.
+    # https://zensical.org/docs/authoring/footnotes/#footnote-tooltips
+    "content.footnote.tooltips",
+
+    # If you have many content tabs that have the same titles (e.g., "Python",
+    # "JavaScript", "Cobol"), this feature causes all of them to switch to
+    # at the same time when the user chooses their language in one.
+    # https://zensical.org/docs/authoring/content-tabs/#linked-content-tabs
+    "content.tabs.link",
+
+    # TODO: not sure I understand this one? Is there a demo of this in the docs?
+    # https://zensical.org/docs/authoring/tooltips/#improved-tooltips
+    "content.tooltips",
+
+    # With this feature enabled, Zensical will automatically hide parts
+    # of the header when the user scrolls past a certain point.
+    # https://zensical.org/docs/setup/header/#automatic-hiding
+    # "header.autohide",
+
+    # Turn on this feature to expand all collapsible sections in the
+    # navigation sidebar by default.
+    # https://zensical.org/docs/setup/navigation/#navigation-expansion
+    # "navigation.expand",
+
+    # This feature turns on navigation elements in the footer that allow the
+    # user to navigate to a next or previous page.
+    # https://zensical.org/docs/setup/footer/#navigation
+    "navigation.footer",
+
+    # When section index pages are enabled, documents can be directly attached
+    # to sections, which is particularly useful for providing overview pages.
+    # https://zensical.org/docs/setup/navigation/#section-index-pages
+    "navigation.indexes",
+
+    # When instant navigation is enabled, clicks on all internal links will be
+    # intercepted and dispatched via XHR without fully reloading the page.
+    # https://zensical.org/docs/setup/navigation/#instant-navigation
+    "navigation.instant",
+
+    # With instant prefetching, your site will start to fetch a page once the
+    # user hovers over a link. This will reduce the perceived loading time
+    # for the user.
+    # https://zensical.org/docs/setup/navigation/#instant-prefetching
+    "navigation.instant.prefetch",
+
+    # In order to provide a better user experience on slow connections when
+    # using instant navigation, a progress indicator can be enabled.
+    # https://zensical.org/docs/setup/navigation/#progress-indicator
+    "navigation.instant.progress",
+
+    # When navigation paths are activated, a breadcrumb navigation is rendered
+    # above the title of each page
+    # https://zensical.org/docs/setup/navigation/#navigation-path
+    "navigation.path",
+
+    # When pruning is enabled, only the visible navigation items are included
+    # in the rendered HTML, reducing the size of the built site by 33% or more.
+    # https://zensical.org/docs/setup/navigation/#navigation-pruning
+    "navigation.prune",
+
+    # When sections are enabled, top-level sections are rendered as groups in
+    # the sidebar for viewports above 1220px, but remain as-is on mobile.
+    # https://zensical.org/docs/setup/navigation/#navigation-sections
+    "navigation.sections",
+
+    # When tabs are enabled, top-level sections are rendered in a menu layer
+    # below the header for viewports above 1220px, but remain as-is on mobile.
+    # https://zensical.org/docs/setup/navigation/#navigation-tabs
+    "navigation.tabs",
+
+    # When sticky tabs are enabled, navigation tabs will lock below the header
+    # and always remain visible when scrolling down.
+    # https://zensical.org/docs/setup/navigation/#sticky-navigation-tabs
+    "navigation.tabs.sticky",
+
+    # A back-to-top button can be shown when the user, after scrolling down,
+    # starts to scroll up again.
+    # https://zensical.org/docs/setup/navigation/#back-to-top-button
+    "navigation.top",
+
+    # When anchor tracking is enabled, the URL in the address bar is
+    # automatically updated with the active anchor as highlighted in the table
+    # of contents.
+    # https://zensical.org/docs/setup/navigation/#anchor-tracking
+    "navigation.tracking",
+
+    # When search highlighting is enabled and a user clicks on a search result,
+    # Zensical will highlight all occurrences after following the link.
+    # https://zensical.org/docs/setup/search/#search-highlighting
+    "search.highlight",
+
+    # When anchor following for the table of contents is enabled, the sidebar
+    # is automatically scrolled so that the active anchor is always visible.
+    # https://zensical.org/docs/setup/navigation/#anchor-following
+    "toc.follow",
+
+    # When navigation integration for the table of contents is enabled, it is
+    # always rendered as part of the navigation sidebar on the left.
+    # https://zensical.org/docs/setup/navigation/#navigation-integration
+    #"toc.integrate",
+  ]
+
+# ----------------------------------------------------------------------------
+# In the "palette" subsection you can configure options for the color scheme.
+# You can configure different color # schemes, e.g., to turn on dark mode,
+# that the user can switch between. Each color scheme can be further
+# customized.
+#
+# Read more:
+# - https://zensical.org/docs/setup/colors/
+# ----------------------------------------------------------------------------
+# Palette toggle for automatic mode (toggle light/dark mode according to system preferences)
+[[project.theme.palette]]
+  media = "(prefers-color-scheme)"
+  primary = "deep-purple"
+  accent = "light-blue"
+  toggle.icon = "lucide/sun-moon"
+  toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+  scheme = "default"
+  media = "(prefers-color-scheme: light)"
+  primary = "deep-purple"
+  accent = "light-blue"
+  toggle.icon = "lucide/sun"
+  toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+  media = "(prefers-color-scheme: dark)"
+  scheme = "slate"
+  primary = "deep-purple"
+  accent = "light-blue"
+  toggle.icon = "lucide/moon"
+  toggle.name = "Switch to system preference"
+
+# ----------------------------------------------------------------------------
+# In the "font" subsection you can configure the fonts used. By default, fonts
+# are loaded from Google Fonts, giving you a wide range of choices from a set
+# of suitably licensed fonts. There are options for a normal text font and for
+# a monospaced font used in code blocks.
+# ----------------------------------------------------------------------------
+#[project.theme.font]
+#text = "Inter"
+#code = "Jetbrains Mono"
+
+# ----------------------------------------------------------------------------
+# You can configure your own logo to be shown in the header using the "logo"
+# option in the "icons" subsection. The logo can be a path to a file in your
+# "docs_dir" or it can be a path to an icon.
+#
+# Likewise, you can customize the logo used for the repository section of the
+# header. Zensical derives the default logo for this from the repository URL.
+# See below...
+#
+# There are other icons you can customize. See the documentation for details.
+#
+# Read more:
+# - https://zensical.org/docs/setup/logo-and-icons
+# - https://zensical.org/docs/authoring/icons-emojis/#search
+# ----------------------------------------------------------------------------
+[project.theme.icon]
+logo = "lucide/smile"
+repo = "fontawesome/brands/github"
+
+# ----------------------------------------------------------------------------
+# The "extra" section contains miscellaneous settings.
+# ----------------------------------------------------------------------------
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/nightscout/trio-docs"
+name = "Trio-docs on GitHub"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.triodocs.org"
+name = "Trio-docs on Discord"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/facebook"
+link = "https://facebook.triodocs.org"
+name = "Trio-docs on Facebook"
+
+# ----------------------------------------------------------------------------
+# Markdown Extensions
+# ----------------------------------------------------------------------------
+
+# TODO: Handle tables and toc if they make sense in Zensical
+# markdown_extensions:
+#   - tables
+#   - toc:
+#       permalink: true
+#       permalink_title: Link to this section for reference
+#       title: On this Page
+#       toc_depth: 3
+#
+
+# TODO: Document and add link
+[project.markdown_extensions.abbr]
+
+# Allow for rendering info-like boxes (aka. call-outs) 
+# with a title, body, specific icon and color.
+#
+# https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/admonition/
+[project.markdown_extensions.admonition]
+
+# supercharges the Admonition extension, making the resulting call-outs 
+# collapsible, allowing them to be opened and closed by the user. 
+#
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#details
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.attr_list]
+
+# TODO: Document and add link
+[project.markdown_extensions.def_list]
+
+# TODO: Document and add link
+[project.markdown_extensions.md_in_html]
+
+# Allow for rendering of block and inline block equations 
+# and integrates seamlessly with MathJax (a library for mathematical typesetting).
+# 
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#arithmatex
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+
+# Inline bundled and custom icons and emojis in *.svg file format 
+# into the resulting HTML page
+# 
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#emoji
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+options.custom_icons = [ "overrides/.icons" ]
+
+# Add support for syntax highlighting of code blocks.
+# 
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#highlight
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans  = "__span"
+pygments_lang_class = true
+linenums_style = "pymdownx-inline"
+
+# Add support for syntax highlighting of inline code blocks.
+#
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#inlinehilite
+[project.markdown_extensions.pymdownx.inlinehilite]
+
+# Add a simple syntax to allow for the rendering of keyboard keys and combinations, 
+# e.g. Ctrl+Alt+Del.
+#
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#keys
+[project.markdown_extensions.pymdownx.keys]
+
+# Convert some sequences of characters into their corresponding symbols, 
+# e.g. copyright symbols or fractions.
+#
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#smartsymbols
+[project.markdown_extensions.pymdownx.smartsymbols]
+
+# Add the ability to embed content from arbitrary files into a document, 
+# including other documents or source files,
+#
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#snippets
+[project.markdown_extensions.pymdownx.snippets]
+auto_append = [ "includes/glossary.txt" ]
+
+# Allow for arbitrary nesting of code and content blocks inside each other,
+# including admonitions, tabs, lists and all other elements.
+#
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#superfences
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
+
+# Allow the usage of content tabs, a simple way to group related content 
+# and code blocks under accessible tabs.
+# 
+# https://zensical.org/docs/setup/extensions/python-markdown-extensions/#tabbed
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+combine_header_slug = true
+
+[project.markdown_extensions.pymdownx.tabbed.slugify]
+object = "pymdownx.slugs.slugify"
+kwds = { case = "lower" }
