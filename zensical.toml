@@ -293,7 +293,7 @@ extra_css = [
 extra_javascript = [
   # "assets/javascripts/disable-instant-if-translated.js",
   "assets/javascripts/mathjax.js",
-  "assets/javascripts/mkdocs-exporter.js",
+  # "assets/javascripts/mkdocs-exporter.js",
   "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
   # "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js",
@@ -364,7 +364,7 @@ features = [
     # will generate a button that allows the user to view the Markdown
     # code for the current page.
     # https://zensical.org/docs/setup/repository/#code-actions
-    "content.action.view",
+    # "content.action.view",
 
     # Code annotations allow you to add an icon with a tooltip to your
     # code blocks to provide explanations at crucial points.
@@ -677,3 +677,72 @@ kwds = { case = "lower" }
 # Plugins
 # ----------------------------------------------------------------------------
 
+# PDF Exporter plugin - generates PDF from documentation
+[project.plugins.exporter.formats.pdf]
+enabled = "!ENV [MKDOCS_EXPORTER_PDF, false]"
+concurrency = 16
+stylesheets = [ "docs/assets/stylesheets/pdf.scss" ]
+
+[project.plugins.exporter.formats.pdf.covers]
+front = "docs/assets/templates/covers/front.html.j2"
+# back = "docs/assets/templates/covers/back.html.j2"
+
+[project.plugins.exporter.formats.pdf.aggregator]
+enabled = true
+output = "trio-docs.pdf"
+covers = "limits"
+
+[[project.plugins.exporter.buttons]]
+title = "Download Page as PDF"
+icon = "material-file-download-outline"
+enabled = "!!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled"
+attributes = "!!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes"
+
+[project.plugins.glightbox]
+zoomable = false
+skip_classes = [ "skip_lightbox" ]
+
+# HTMLProofer plugin - link validation
+[project.plugins.htmlproofer]
+enabled = "!ENV [CHECK_BROKEN_LINKS, False]"
+raise_error_after_finish = true
+
+# Include Markdown plugin - content inclusion
+[project.plugins.include-markdown]
+start = "<!--include-markdown-start-->"
+end = "<!--include-markdown-end-->"
+
+  # Macros plugin - variable expansion (e.g., {{ build_date }})
+[project.plugins.macros]
+
+[project.plugins.open-in-new-tab]
+
+ # Redirects plugin - handles page moves/renames
+[project.plugins.redirects]
+redirect_maps = [
+  { "startup-guide.md" = "configuration/new-user-setup.md" },
+  { "startup-guide/index.md" = "configuration/new-user-setup.md" }
+]
+
+# Unused Files plugin - find orphaned files
+[project.plugins.unused_files]
+enabled = "!ENV [CHECK_UNUSED_FILES, False]"
+strict = true
+excluded_files = [
+    "back.html.j2",
+    "background.png",
+    "bolus-entry-dynamic-graph.mp4",
+    "CNAME",
+    ".DS_Store",
+    "extra.css",
+    "favicon.ico",
+    "front.html.j2",
+    ".keep",
+    "mathjax.js",
+    "mkdocs-exporter.js",
+    "pdf.scss",
+    "primary_color.css",
+    "trio-docs.pdf",
+    "trio-intro.mp4",
+    "trio-phone-mockup.mp4",
+]
