@@ -57,7 +57,9 @@ repo_url = "https://github.com/nightscout/trio-docs/"
 # Read more: https://zensical.org/docs/setup/repository/#edit_uri
 edit_uri = "edit/dev/docs/"
 
+# ~~~~~~~~~~~~~~~~~~~
 # Navigation structure
+# ~~~~~~~~~~~~~~~~~~~
 # Zensical supports both implicit navigation and explicitly defined navigation.
 # If you decide not to define a navigation here then Zensical will simply
 # derive the navigation structure from the directory structure of your
@@ -263,6 +265,9 @@ nav = [
     ]}
   ]
 
+# ~~~~~~~~~~~~~~~
+# CSS
+# ~~~~~~~~~~~~~~~
 # With the "extra_css" option you can add your own CSS styling to customize
 # your Zensical project according to your needs. You can add any number of
 # CSS files.
@@ -276,6 +281,9 @@ extra_css = [
    "assets/stylesheets/extra.css",
 ]
 
+# ~~~~~~~~~~~~~~~
+# Javascript
+# ~~~~~~~~~~~~~~~
 # With the `extra_javascript` option you can add your own JavaScript to your
 # project to customize the behavior according to your needs.
 #
@@ -292,7 +300,7 @@ extra_javascript = [
 ]
 
 # ----------------------------------------------------------------------------
-# Section for configuring theme options
+# Theme
 # ----------------------------------------------------------------------------
 [project.theme]
 
@@ -337,8 +345,9 @@ language = "en"
 logo = "assets/images/trio-logo.png"
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Zensical feature toggles that change the behavior of the documentation site.
+# Features
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Zensical feature toggles that change the behavior of the documentation site.
 features = [
     # Zensical includes an announcement bar. This feature allows users to
     # dismiss it then they have read the announcement.
@@ -662,3 +671,9 @@ combine_header_slug = true
 [project.markdown_extensions.pymdownx.tabbed.slugify]
 object = "pymdownx.slugs.slugify"
 kwds = { case = "lower" }
+
+
+# ----------------------------------------------------------------------------
+# Plugins
+# ----------------------------------------------------------------------------
+
